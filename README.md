@@ -1,6 +1,6 @@
 # uPlan
 
-__Problem Assignment__  
+__Problem Statement__  
 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Disorganization among students often leads to stress, self-esteem issues, and failing grades.1  Over the past decade, students have increasingly reported feelings of being overwhelmed and depressed.2   Missing assignments due to disorganization can lead to students feeling as though they are spiraling out of control with no chance of catching back up. After missing a few assignments the student may feel that missing one more assignment is not going to make a big difference, so why bother? Each missed assignment leads to a greater feeling of hopelessness and increases the likelihood of the student simply giving up.
 
 
