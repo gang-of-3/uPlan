@@ -11,3 +11,9 @@ __Team Roles & Responsibilities__
 + Joey Wilson - Architect
 + Chris Vennel - Engineer
 + Gregory Warchol - Engineer
+
+
+<img src="https://raw.githubusercontent.com/gang-of-3/uPlan/master/Architectural%20Diagram.png" alt="drawing" width="600"/>
+<img src="https://raw.githubusercontent.com/gang-of-3/uPlan/master/Basic%20Sequence%20Diagram.png" alt="drawing" width="400"/>
+
+
