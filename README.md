@@ -37,6 +37,7 @@ __Features__
 | Instructor | Create Class | As an instructor, I would like to be able to create a class for students to join. |
 | Student | Join a Class | As a student, I would like to be able to join an existing class to receive updates. |
 
+__Architectural Diagram__  
 
 <img src="https://raw.githubusercontent.com/gang-of-3/uPlan/master/Architectural%20Diagram.png" alt="drawing" width="600"/>
 
