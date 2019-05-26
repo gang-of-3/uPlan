@@ -1,0 +1,47 @@
+<template>
+  <require from="./todo-edit.scss"></require>
+
+  <div class="modal fade" id="todoEdit-${information.id}" tabindex="-1" role="dialog" aria-hidden="true">
+    <div class="modal-dialog" role="document">
+      <div class="modal-content">
+        <div class="modal-header">
+          <h5 class="modal-title" if.bind="isNew()">New TODO Item</h5>
+          <h5 class="modal-title" else>Edit TODO Item</h5>
+          <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+            <span aria-hidden="true">&times;</span>
+          </button>
+        </div>
+        <div class="modal-body">
+          <div class="row">
+            <div class="col font-weight-bold">
+              Title
+            </div>
+            <div class="col">
+              <input type="text" value.bind="information.title"/>
+            </div>
+          </div>
+          <div class="row py-3">
+            <div class="col font-weight-bold">
+              Due Date
+            </div>
+            <div class="col">
+              <input type="text" value.bind="information.dueDate"/>
+            </div>
+          </div>
+          <div class="row">
+            <div class="col font-weight-bold">Description</div>
+          </div>
+          <div class="row">
+            <div class="col">
+              <textarea rows="3" value.bind="information.description"></textarea>
+            </div>
+          </div>
+        </div>
+        <div class="modal-footer">
+          <button type="button" class="btn btn-secondary" data-dismiss="modal">Cancel</button>
+          <button type="button" class="btn btn-primary"  click.delegate="submit()" data-dismiss="modal">Save changes</button>
+        </div>
+      </div>
+    </div>
+  </div>
+</template>
