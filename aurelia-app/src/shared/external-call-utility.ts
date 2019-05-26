@@ -1,5 +1,5 @@
 import {HttpClient} from "aurelia-http-client";
-import {ExternalUrl} from "./ExternalUrl";
+import {ExternalUrl} from "./external-url";
 
 export class ExternalCallUtility{
   client:HttpClient;
@@ -10,5 +10,10 @@ export class ExternalCallUtility{
 
   get(path: ExternalUrl){
     return this.client.get(path);
+  }
+
+  post(path: ExternalUrl, content){
+    console.log(content);
+    return this.client.post(path, content);
   }
 }

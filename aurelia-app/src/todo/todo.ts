@@ -1,6 +1,6 @@
 import {TodoInformation} from "./todo-information";
-import {ExternalCallUtility} from "../shared/ExternalCallUtility";
-import {ExternalUrl} from "../shared/ExternalUrl";
+import {ExternalCallUtility} from "../shared/external-call-utility";
+import {ExternalUrl} from "../shared/external-url";
 
 export class Todo {
   todoItems: TodoInformation[];
