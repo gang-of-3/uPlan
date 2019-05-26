@@ -1,16 +1,17 @@
 import {TodoInformation} from "./todo-information";
+import {ExternalCallUtility} from "../shared/ExternalCallUtility";
 
 export class Todo {
-  todoItems:TodoInformation[];
+  todoItems: TodoInformation[];
 
-  constructor(){
-    this.todoItems = [];
-    this.todoItems.push({title:"Example Assignment", dueDate:"12/31/2019", description:"Chew all the gum that you can find until you explode"});
-    this.todoItems.push({title:"Other Assignment", dueDate:"11/30/2020", description:"Keep working"})
-
+  constructor() {
+    const utility = new ExternalCallUtility();
+    utility.get().then(data => {
+      this.todoItems = data.content;
+    });
   }
 
-  addItem(){
+  addItem() {
     console.log("ADDING")
   }
 }
