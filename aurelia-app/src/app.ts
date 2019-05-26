@@ -26,6 +26,12 @@ export class App {
         name: 'todo',
         moduleId: PLATFORM.moduleName('./todo/todo'),
         title: 'TODO'
+      },
+      {
+        route: 'logon',
+        name: 'logon',
+        moduleId: PLATFORM.moduleName('./logon/logon'),
+        title: 'Logon'
       }
     ]);
 
