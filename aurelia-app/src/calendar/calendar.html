@@ -1,3 +1,20 @@
 <template>
-  HELLO CALENDAR
+  <require from="./calendar.scss"></require>
+  <div class="row text-center h2">
+    <div class="col">
+      ${monthName} ${year}
+    </div>
+  </div>
+  <div class="row">
+    <div class="col border text-center" repeat.for="day of dayNames">
+      ${day}
+    </div>
+  </div>
+  <div class="row" repeat.for="week of month">
+    <div class="col border day" repeat.for="day of week">
+      <div class="row pl-1 font-weight-bold">
+        ${day}
+      </div>
+    </div>
+  </div>
 </template>
