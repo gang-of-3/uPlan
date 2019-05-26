@@ -13,7 +13,20 @@ export class ExternalCallUtility{
   }
 
   post(path: ExternalUrl, content){
-    console.log(content);
-    return this.client.post(path, content);
+    var fullPath = path.toString();
+
+    return this.client.post(fullPath, content);
+  }
+
+  put(path: ExternalUrl, content, suffix:String){
+    var fullPath = path + "/" + suffix;
+
+    return this.client.post(fullPath, content);
+  }
+
+  delete(path: ExternalUrl, suffix?:String){
+    var fullPath = path + "/" + suffix;
+
+    return this.client.delete(fullPath);
   }
 }

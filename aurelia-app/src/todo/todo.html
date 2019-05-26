@@ -6,7 +6,7 @@
   <div class="container">
     <div class="h2">TODO Items </div>
     <div class="row justify-content-end">
-      <div class="clickable" click.delegate="addItem()" data-toggle="modal" data-target="#todoEdit">
+      <div class="clickable" click.delegate="addItem()" data-toggle="modal" data-target="#todoEdit-0">
       <i class="fa fa-plus" aria-hidden="true"></i> Add Item
       </div>
     </div>
@@ -15,6 +15,6 @@
       <todo-item repeat.for="todoItem of todoItems" information.bind="todoItem"></todo-item>
     </div>
   </div>
-  <todo-edit></todo-edit>
+  <todo-edit information.two-way="newTodoItem"></todo-edit>
 </template>
 

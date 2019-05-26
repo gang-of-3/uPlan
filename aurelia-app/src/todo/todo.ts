@@ -6,14 +6,16 @@ import {autoinject} from "aurelia-framework";
 @autoinject
 export class Todo {
   todoItems: TodoInformation[];
+  newTodoItem: TodoInformation;
 
   constructor(private externalCallUtility: ExternalCallUtility) {
+    this.newTodoItem = new TodoInformation();
     externalCallUtility.get(ExternalUrl.TODO).then(data => {
       this.todoItems = data.content;
     });
   }
 
   addItem() {
-    console.log("ADDING")
+    this.newTodoItem = new TodoInformation();
   }
 }
