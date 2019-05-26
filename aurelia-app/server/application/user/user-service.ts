@@ -13,4 +13,8 @@ export class UserService {
     var logonDetails = new LogonDetails(username, password);
     return this.userDao.retrieveUid(logonDetails);
   }
+
+  lookupUserDetails(uid:string){
+    return this.userDao.retrieveUserDetails(uid);
+  }
 }
