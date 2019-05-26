@@ -4,7 +4,16 @@
   <require from="./styles.scss"></require>
   <require from="./nav-bar.html"></require>
   <nav-bar router.bind="router"></nav-bar>
-  <div class="page-host container">
+  <div class="content page-host container">
     <router-view></router-view>
   </div>
+
+  <footer class="footer">
+    <div class="bg-light container-fluid py-5 mt-5">
+      <div class="row my-4">
+        <div class="col text-left h7">About Us | Terms of Service | Privacy Policy</div>
+        <div class="col text-right h7">©2019 uPlan</div>
+      </div>
+    </div>
+  </footer>
 </template>
