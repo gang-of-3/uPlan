@@ -7,19 +7,23 @@
         uPlan
       </div>
 
-      <div class="collapse navbar-collapse ml-4" id="navbarNav">
+      <div class="collapse navbar-collapse ml-4" id="navbarNav"  if.bind="isSecured">
         <ul class="navbar-nav">
           <li class="nav-item active">
-            <a class="nav-link" href="#">Home <span class="sr-only">(current)</span></a>
+            <a class="nav-link font-weight-bold" href="#" click.delegate="logout()">Home <span class="sr-only">(current)</span></a>
+          </li>
+          <li class="nav-item mx-3">
+            <a class="nav-link font-weight-bold" href="#">Calendar</a>
           </li>
           <li class="nav-item">
-            <a class="nav-link" href="#">Calendar</a>
-          </li>
-          <li class="nav-item">
-            <a class="nav-link" href="todo">TODO List</a>
+            <a class="nav-link font-weight-bold" href="todo">TODO List</a>
           </li>
         </ul>
       </div>
+    </div>
+
+    <div class="clickable my-2 my-lg-0" if.bind="isSecured">
+      <div class="nav-link text-white font-weight-bold" click.delegate="logout()">Logout</div>
     </div>
   </nav>
 </template>
