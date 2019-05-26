@@ -20,7 +20,7 @@ app.use(function (req, res, next) {
     var sessionId = req.cookies['UPLAN_SESSION_ID'];
     var uid = sessionManager.lookupUid(sessionId);
     if (!uid) {
-      res.send(401, 'Invalid Session');
+      res.status(401).send('Invalid Session');
     }
     req.body.uid = uid;
   }
