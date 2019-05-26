@@ -2,15 +2,16 @@ import {TodoInformation} from "../todo-information";
 import $ from "jquery";
 import {ExternalCallUtility} from "../../shared/external-call-utility";
 import {ExternalUrl} from "../../shared/external-url";
+import {autoinject} from "aurelia-framework";
 
+@autoinject
 export class TodoEdit{
   information: TodoInformation;
-  externalCallUtility: ExternalCallUtility;
 
-  constructor(){
-    this.externalCallUtility = new ExternalCallUtility();
+  constructor(private externalCallUtility: ExternalCallUtility){
     //unfortunate integration with bootstrap modal
-    $(document).on('show.bs.modal','#exampleModal', () => {
+    var id = this.information ? this.information.id : "";
+    $(document).on('show.bs.modal','#todoEdit' + id, () => {
       this.clear();
     });
   }
