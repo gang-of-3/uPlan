@@ -1,3 +1,4 @@
 export enum ExternalUrl{
-  TODO = "/ws/todos"
+  TODO = "/ws/todos",
+  LOGON = "/ws/logon",
 }

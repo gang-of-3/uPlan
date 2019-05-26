@@ -5,16 +5,9 @@ export class App {
   public router: Router;
 
   public configureRouter(config: RouterConfiguration, router: Router) {
-    console.log('im alive');
-    config.title = 'Aurelia';
+    config.title = 'uPlan';
     config.options.pushState = true;
     config.map([
-      {
-        route: ['', 'welcome'],
-        name: 'welcome',
-        moduleId: PLATFORM.moduleName('./welcome'),
-        title: 'Welcome'
-      },
       {
         route: 'calendar',
         name: 'calendar',
@@ -26,6 +19,12 @@ export class App {
         name: 'todo',
         moduleId: PLATFORM.moduleName('./todo/todo'),
         title: 'TODO'
+      },
+      {
+        route: ['', 'logon'],
+        name: 'logon',
+        moduleId: PLATFORM.moduleName('./logon/logon'),
+        title: 'Logon'
       }
     ]);
 

@@ -1,0 +1,50 @@
+<template>
+  <form submit.delegate="logon()">
+    <div class="container">
+      <div class="row h1">
+        Welcome to uPlan!
+      </div>
+      <div class="row">
+        <div class="col border m-4">
+          <div class="row h3">
+            Our Mission
+          </div>
+          <div class="row m-3">
+            The Gang of Three, or Go3, strives to provide digital tools to help students succeed in the modern classroom
+            environment. Gang of Three believes that through proper implementation of technology student success can be
+            thoroughly supported and assured. Too often technology, which is supposed to assist and simplify
+            workstreams, ends up adding complications and obstacles, complicating that which should be simple. We, at
+            Gang of Three, believe tools should be easy to use, and help streamline learning, not hinder learning. Above
+            all else, Gang of Three seeks to promote learning in an intuitive and stimulating environment, encourage the
+            engagement of a student within their academic community, and aid collaboration between peers to promote
+            learning in an organic fashion while fostering relationships. Through learning, academic engagement, and
+            collaboration, true academic success can be achieved.
+          </div>
+        </div>
+        <div class="col-4 m-4">
+          <div class="row h4">
+            Login Information
+          </div>
+          <div class="alert alert-danger" role="alert" if.bind="isError">
+            Invalid credentials - Please try again.
+          </div>
+          <div class="row pt-3">
+            <div class="col-4">Email</div>
+            <input type="text" value.bind="information.username" class="col">
+          </div>
+          <div class="row pt-2">
+            <div class="col-4">Password</div>
+            <input type="password" value.bind="information.password" class="col">
+          </div>
+          <div class="row pt-2">
+            <div class="col"></div>
+            <div class="col text-right px-0">
+              <button type="submit">Submit</button>
+            </div>
+
+          </div>
+        </div>
+      </div>
+    </div>
+  </form>
+</template>
