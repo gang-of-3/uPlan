@@ -1,4 +1,5 @@
 import {HttpClient} from "aurelia-http-client";
+import {ExternalUrl} from "./ExternalUrl";
 
 export class ExternalCallUtility{
   client:HttpClient;
@@ -7,7 +8,7 @@ export class ExternalCallUtility{
     this.client = new HttpClient();
   }
 
-  get(){
-    return this.client.get("/ws/test");
+  get(path: ExternalUrl){
+    return this.client.get(path);
   }
 }
