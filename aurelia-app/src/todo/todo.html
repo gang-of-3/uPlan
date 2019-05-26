@@ -1,6 +1,6 @@
 <template>
   <require from="./todo.scss"></require>
-  <require from="./todo-item/todo-item.html"></require>
+  <require from="./todo-item/todo-item"></require>
   <require from="./todo-edit/todo-edit.html"></require>
 
   <div class="container">
@@ -12,7 +12,7 @@
     </div>
 
     <div class="row flex-row">
-      <todo-item repeat.for="i of 20"></todo-item>
+      <todo-item repeat.for="todoItem of todoItems" information.bind="todoItem"></todo-item>
     </div>
   </div>
   <todo-edit></todo-edit>

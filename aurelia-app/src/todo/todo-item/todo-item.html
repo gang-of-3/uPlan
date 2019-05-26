@@ -3,7 +3,7 @@
 
   <div class="todo-item card m-2">
     <div class="card-header font-weight-bolder text-capitalize">
-      Do your work
+      ${information.title}
       <div class="btn-group pull-right clickable">
         <i class="fa fa-caret-down" data-toggle="dropdown" aria-hidden="true"></i>
         <!--<button class="btn btn-secondary btn-sm dropdown-toggle" type="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">-->
@@ -18,14 +18,14 @@
     <div class="card-body">
       <div class="row">
         <div class="col font-weight-bold">Due Date</div>
-        <div class="col font-weight-light">12/31/2020</div>
+        <div class="col font-weight-light">${information.dueDate}</div>
       </div>
       <div class="row">
         <div class="col font-weight-bold">Description</div>
       </div>
       <div class="row">
         <div class="col text-wrap font-weight-light">
-        Chew all the gum that you can find until you explode
+          ${information.description}
         </div>
       </div>
     </div>
