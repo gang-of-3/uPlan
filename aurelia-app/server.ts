@@ -59,11 +59,12 @@ app.get('/ws/todos', function (req, res) {
       dueDate: "11/30/2020",
       description: "More endpoints"
     }, {id: 6, title: "Assignment", dueDate: "11/30/2020", description: "Finish endpoints"}];
-  res.send(todoItems);
+  res.send({todoItems:todoItems});
 });
 
 app.post('/ws/todos', function (req, res) {
   //save a new tdo item
+  //return the id of the new item
   res.end();
 });
 
@@ -76,6 +77,12 @@ app.delete('/ws/todos/:todoId', function (req, res) {
   //remove a tdo item
   res.end();
 });
+
+app.get('/ws/users', function (req, res) {
+  const details = userService.lookupUserDetails(req.body.uid);
+  res.send(details);
+});
+
 
 app.listen(port, function () {
   console.log('Listening on port ' + port);
