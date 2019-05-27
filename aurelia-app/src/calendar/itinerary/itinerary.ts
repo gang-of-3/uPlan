@@ -13,7 +13,9 @@ export class Itinerary{
   }
 
   get getItinerary(){
-    return this.itineraryService.findItinerary(this.year, this.month, this.day);
+    var itinerary = this.itineraryService.findItinerary(this.year, this.month, this.day);
+
+    return itinerary;
   }
 
 

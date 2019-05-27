@@ -1,10 +1,17 @@
 export class CalendarItem{
+  id: string;
   title:string;
   dateTime:Date;
 
-  constructor(title?, dateTime?){
+  constructor(id, title, dateTime){
+    this.id = id;
+    console.log(this.id);
     this.title = title;
     this.dateTime = dateTime;
+  }
+
+  public getId(){
+    return this.id;
   }
 
   toString(){

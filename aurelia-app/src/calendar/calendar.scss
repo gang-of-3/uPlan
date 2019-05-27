@@ -4,4 +4,7 @@
 
 .calendar-item{
   font-size: .7em;
+  &:hover{
+    color:gray;
+  }
 }

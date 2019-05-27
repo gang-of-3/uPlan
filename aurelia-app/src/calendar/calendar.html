@@ -9,7 +9,7 @@
       ${monthName} ${activeYear}
     </div>
     <div class="col">
-      <div class="clickable text-right" data-toggle="modal" data-target="#calendarModify"  click.delegate="addItem()" >
+      <div class="clickable text-right" data-toggle="modal" data-target="#calendarModify-0"  click.delegate="addItem()" >
         <i class="fa fa-plus" aria-hidden="true" ></i> Add Item
       </div>
     </div>
@@ -37,5 +37,5 @@
       </div>
     </div>
   </div>
-  <calendar-modify calendarItem.two-way="newCalendarItem"></calendar-modify>
+  <calendar-modify calendar-item.one-way="newCalendarItem"></calendar-modify>
 </template>
