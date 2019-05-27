@@ -94,6 +94,12 @@ app.get('/ws/calendar/:year/:month', function (req, res) {
   res.send({calendarItems:calendarItems});
 });
 
+app.post('/ws/calendar', function (req, res) {
+  //save a new calendar item
+  //return the id of the new item
+  res.end();
+});
+
 
 app.listen(port, function () {
   console.log('Listening on port ' + port);

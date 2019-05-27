@@ -4,6 +4,7 @@ import {CalendarUtility} from "./calendar-utility";
 import {ExternalCallUtility} from "../shared/external-call-utility";
 import {ExternalUrl} from "../shared/external-url";
 import {ItineraryService} from "./itinerary/itinerary-service";
+import {TodoInformation} from "../todo/todo-information";
 
 @autoinject
 export class Calendar{
@@ -13,8 +14,11 @@ export class Calendar{
   monthName:String;
   activeYear: number;
   activeMonth:number;
+  newCalendarItem: CalendarItem;
+
 
   constructor(private calendarUtility:CalendarUtility, private externalCallUtility:ExternalCallUtility, private itineraryService:ItineraryService){
+    this.newCalendarItem = new CalendarItem();
     this.dayNames = ['Sunday','Monday','Tuesday','Wednesday','Thursday','Friday','Saturday']
     this.monthNames = ['January','February','March','April','May','June','July', 'August','September','October','November','December'];
     var currentMonth = calendarUtility.getCurrentMonth();
@@ -58,5 +62,8 @@ export class Calendar{
     this.calendar = this.calendarUtility.buildMonth(month, year);
   }
 
+  addItem() {
+    this.newCalendarItem = new CalendarItem();
+  }
 
 }

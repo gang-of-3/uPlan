@@ -2,7 +2,7 @@ export class CalendarItem{
   title:string;
   dateTime:Date;
 
-  constructor(title, dateTime){
+  constructor(title?, dateTime?){
     this.title = title;
     this.dateTime = dateTime;
   }
