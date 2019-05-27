@@ -100,6 +100,16 @@ app.post('/ws/calendar', function (req, res) {
   res.end();
 });
 
+app.put('/ws/calendar/:itemId', function (req, res) {
+  //update an existing calendar item
+  res.end();
+});
+
+app.delete('/ws/calendar/:itemId', function (req, res) {
+  //remove a calendar item
+  res.end();
+});
+
 
 app.listen(port, function () {
   console.log('Listening on port ' + port);

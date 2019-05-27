@@ -7,6 +7,12 @@ export class ItineraryService {
     this.events = [];
   }
 
+  removeItineraryItem(id:String){
+    this.events = this.events.filter((item)=>{
+      return item.id != id;
+    });
+  }
+
   addItineraryItem(item:CalendarItem){
     this.events.push(item);
   }
