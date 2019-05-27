@@ -1,5 +1,6 @@
 import {UserService} from "./server/application/user/user-service";
 import {SessionManager} from "./server/application/session/session-manager";
+import {TodoService} from "./server/application/todo/todo-service";
 
 var bodyParser = require("body-parser");
 
@@ -11,6 +12,7 @@ var cookieParser = require('cookie-parser');
 
 const userService = new UserService();
 const sessionManager = new SessionManager();
+const todoService = new TodoService();
 
 app.use(bodyParser.json());
 app.use(cookieParser());
@@ -42,7 +44,12 @@ app.post('/ws/logon', function (req, res) {
 
 app.get('/ws/todos', function (req, res) {
   //get all tdo items for person
-  var todoItems = [{
+
+  const todoItems = todoService.getTodos();
+
+    ////Old hardcoded version////
+
+  /*var todoItems = [{
     id: 1,
     title: "Example Assignment",
     dueDate: "12/31/2019",
@@ -59,6 +66,9 @@ app.get('/ws/todos', function (req, res) {
       dueDate: "11/30/2020",
       description: "More endpoints"
     }, {id: 6, title: "Assignment", dueDate: "11/30/2020", description: "Finish endpoints"}];
+
+  */
+
   res.send({todoItems:todoItems});
 });
 

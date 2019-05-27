@@ -76,7 +76,8 @@
     "build": "au build",
     "start": "au run",
     "test": "au test",
-    "start-server": "node server.ts"
+    "start-server": "node server.ts",
+    "debug-server": "node  %NODE_DEBUG_OPTION% --require ts-node/register server.ts"
   },
   "engines": {
     "node": ">=8.9.0"
