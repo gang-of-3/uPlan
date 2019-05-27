@@ -11,5 +11,9 @@ export class TodoService {
   getTodos(){
     return this.todoDao.getTodos();
   }
+
+  deleteTodo(id){
+    this.todoDao.deleteTodo(id);
+  }
 }
 

@@ -85,6 +85,8 @@ app.put('/ws/todos/:todoId', function (req, res) {
 
 app.delete('/ws/todos/:todoId', function (req, res) {
   //remove a tdo item
+
+  todoService.deleteTodo(req.params.todoId);
   res.end();
 });
 
