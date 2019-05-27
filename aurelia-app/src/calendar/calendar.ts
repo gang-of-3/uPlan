@@ -48,7 +48,7 @@ export class Calendar{
   setupCalendar(month, year){
     this.externalCallUtility.get(ExternalUrl.CALENDAR, year + '/' + month).then(data => {
       const events = data.content.calendarItems.map((item) => {
-        return new CalendarItem(item.title, item.dateTime);
+        return new CalendarItem(item.title, new Date(item.dateTime));
       });
       this.itineraryService.setFullItinerary(events);
     });

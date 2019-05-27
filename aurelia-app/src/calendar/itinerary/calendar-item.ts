@@ -1,17 +1,13 @@
 export class CalendarItem{
   title:string;
-  dateTime:string;
+  dateTime:Date;
 
   constructor(title, dateTime){
     this.title = title;
     this.dateTime = dateTime;
   }
 
-  getDate(){
-    return new Date(this.dateTime);
-  }
-
   toString(){
-    return this.getDate().toLocaleTimeString('en-US', {hour: "numeric", minute: "numeric"}) + " - " + this.title;
+    return this.dateTime.toLocaleTimeString('en-US', {hour: "numeric", minute: "numeric"}) + " - " + this.title;
   }
 }
