@@ -83,6 +83,23 @@ app.get('/ws/users', function (req, res) {
   res.send(details);
 });
 
+app.get('/ws/calendar/:year/:month', function (req, res) {
+  //get all calendar items for person
+  var calendarItems = [{
+    id: 1,
+    title: "Example Assignment",
+    dateTime: new Date(),
+    description: "Software Group Meeting"
+  }];
+  res.send({calendarItems:calendarItems});
+});
+
+app.post('/ws/calendar', function (req, res) {
+  //save a new calendar item
+  //return the id of the new item
+  res.end();
+});
+
 
 app.listen(port, function () {
   console.log('Listening on port ' + port);
