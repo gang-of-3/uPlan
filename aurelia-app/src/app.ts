@@ -25,6 +25,12 @@ export class App {
         name: 'logon',
         moduleId: PLATFORM.moduleName('./logon/logon'),
         title: 'Logon'
+      },
+      {
+        route: ['classes'],
+        name: 'classes',
+        moduleId: PLATFORM.moduleName('./classes/classes'),
+        title: 'Classes'
       }
     ]);
 
