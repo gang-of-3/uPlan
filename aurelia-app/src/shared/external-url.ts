@@ -3,4 +3,5 @@ export enum ExternalUrl{
   LOGON = "/ws/logon",
   USERS = "/ws/users",
   CALENDAR = "/ws/calendar",
+  CLASSES= "/ws/classes",
 }
