@@ -110,6 +110,10 @@ app.delete('/ws/calendar/:itemId', function (req, res) {
   res.end();
 });
 
+app.get('/ws/classes', function (req, res) {
+  res.send({classes:[{id:11,shortName:"SE577",longName:"Software Architecture"}]});
+});
+
 
 app.listen(port, function () {
   console.log('Listening on port ' + port);

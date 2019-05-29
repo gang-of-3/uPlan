@@ -4,6 +4,9 @@ import {bindable, autoinject} from "aurelia-framework";
 import {ExternalUrl} from "../../shared/external-url";
 import {ExternalCallUtility} from "../../shared/external-call-utility";
 import {ItineraryService} from "../itinerary/itinerary-service";
+import {Class} from "./class";
+import {UserInformationService} from "../../user/user-information-service";
+import {UserInformation} from "../../user/user-information";
 
 @autoinject
 export class CalendarModify {
@@ -11,8 +14,20 @@ export class CalendarModify {
 
   @bindable name: string;
 
-  constructor(private externalCallUtility: ExternalCallUtility, private itineraryService: ItineraryService) {
+  classes : Class[];
 
+  isInstructor:boolean;
+
+  constructor(private externalCallUtility: ExternalCallUtility, private itineraryService: ItineraryService, userInformationService: UserInformationService) {
+    userInformationService.getUserInformation().then((information)=>{
+      this.isInstructor = information.type === "INSTRUCTOR";
+      if(this.isInstructor){
+        this.externalCallUtility.get(ExternalUrl.CLASSES).then(((response)=>{
+          this.classes = response.content.classes;
+          console.log(this.classes);
+        }));
+      }
+    });
   }
 
   isNew() {

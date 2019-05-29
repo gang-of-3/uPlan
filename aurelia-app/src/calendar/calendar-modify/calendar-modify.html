@@ -26,6 +26,18 @@
               <input type="text" value.bind="calendarItem.dateTime"/>
             </div>
           </div>
+          <div class="row pb-3" if.bind="isInstructor">
+            <div class="col font-weight-bold">
+              Class
+            </div>
+            <div class="col">
+              <select>
+                <option value=""></option>
+                <option value="${calendarItem.classId}"
+                        repeat.for="class of classes">${class.shortName}</option>
+              </select>
+            </div>
+          </div>
           <div class="row">
             <div class="col font-weight-bold">Description</div>
           </div>
