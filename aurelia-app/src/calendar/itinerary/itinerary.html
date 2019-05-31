@@ -1,9 +1,9 @@
 <template>
   <require from="../calendar-modify/calendar-modify"></require>
-  <div class="row container mx-0 px-0 clickable" repeat.for="item of getItinerary" data-toggle="modal" data-target="#calendarModify-${item.id}">
-    <div class="col px-0 calendar-item">
+  <div class="row container mx-0 px-0 " repeat.for="item of getItinerary">
+    <div class="col px-0 calendar-item clickable" data-toggle="modal" data-target="#calendarModify-${item.id}">
       ${item}
     </div>
-    <calendar-modify calendar-item.two-way="item" name="hello"></calendar-modify>
+    <calendar-modify calendar-item.two-way="item"></calendar-modify>
   </div>
 </template>

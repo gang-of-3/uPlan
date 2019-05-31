@@ -1,6 +1,7 @@
+import "datejs";
+
 export class CalendarUtility{
   public buildMonth(month, year){
-
     var totalDaysInMonth = this.calculateTotalDaysInMonth(month, year);
     var firstWeekdayOfMonth = this.calculateFirstWeekdayOfMonth(month, year);
     var numWeeksInMonth = this.calculateNumberWeeksInMonth(totalDaysInMonth,firstWeekdayOfMonth);
@@ -40,12 +41,10 @@ export class CalendarUtility{
   }
 
   private calculateTotalDaysInMonth(month, year){
-    var date = new Date();
-    date.setFullYear(year);
-    date.setMonth(month+1);
-    date.setDate(0);
+    // @ts-ignore
+    var numDays = Date.getDaysInMonth(year, month);
 
-    return date.getDate();
+    return numDays;
   }
 
   private calculateFirstWeekdayOfMonth(month, year){
