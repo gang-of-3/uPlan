@@ -72,13 +72,3 @@ const run = gulp.series(
 );
 
 export { run as default };
-
-// proxy: {
-//   target: 'localhost:8080'
-// },
-// middleware: [
-//   function(req, res, next) {
-//     console.log(req.fullUrl);
-//     next();
-//   }
-// ],
