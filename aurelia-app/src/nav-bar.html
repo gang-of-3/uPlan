@@ -16,7 +16,7 @@
             <a class="nav-link font-weight-bold" href="calendar">Calendar</a>
           </li>
           <li class="nav-item">
-            <a class="nav-link font-weight-bold" href="todo">TODO List</a>
+            <a class="nav-link font-weight-bold" href="todo" if.bind="userInformation.type != 'INSTRUCTOR'">TODO List</a>
           </li>
         </ul>
       </div>
