@@ -6,7 +6,6 @@ export class CalendarItem{
 
   constructor(id, title, dateTime){
     this.id = id;
-    console.log(this.id);
     this.title = title;
     this.dateTime = dateTime;
   }

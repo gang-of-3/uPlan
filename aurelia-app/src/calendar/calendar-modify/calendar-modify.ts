@@ -24,7 +24,6 @@ export class CalendarModify {
       if(this.isInstructor){
         this.externalCallUtility.get(ExternalUrl.CLASSES).then(((response)=>{
           this.classes = response.content.classes;
-          console.log(this.classes);
         }));
       }
     });
