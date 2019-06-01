@@ -75,11 +75,13 @@ app.get('/ws/todos', function (req, res) {
 app.post('/ws/todos', function (req, res) {
   //save a new tdo item
   //return the id of the new item
+  todoService.addTodo(req.body);
   res.end();
 });
 
 app.put('/ws/todos/:todoId', function (req, res) {
   //update an existing tdo item
+  todoService.editTodo(req.body);
   res.end();
 });
 
