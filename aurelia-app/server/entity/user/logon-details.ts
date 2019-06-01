@@ -1,3 +1,5 @@
+import * as PasswordHash  from "password-hash";
+
 export class LogonDetails {
   username: string;
   password: string;
@@ -8,6 +10,6 @@ export class LogonDetails {
   }
 
   equals(logonDetails:LogonDetails){
-    return this.username === logonDetails.username && this.password === logonDetails.password;
+    return this.username === logonDetails.username && PasswordHash.verify(this.password ,logonDetails.password);
   }
 }
