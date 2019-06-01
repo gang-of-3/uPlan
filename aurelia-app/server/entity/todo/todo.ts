@@ -1,10 +1,16 @@
+export enum TodoStatus {
+  INCOMPLETE, COMPLETE
+}
+
 export class Todo {
   id: number;
   uid: string;
-  complete:boolean;
+  complete: TodoStatus;
   title: string;
   dueDate: string;
   description: string;
+
+
 
   constructor(id, uid, complete,title, dueDate, description){
     this.id = id;

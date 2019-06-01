@@ -1,4 +1,4 @@
-import {Todo} from "./todo";
+import {Todo, TodoStatus} from "./todo";
 
 export class TodoDao {
 
@@ -24,7 +24,7 @@ export class TodoDao {
   }
 
   editTodos(todo){
-    for (var i=0; i< this.todos.length; i++){
+    for (let i=0; i< this.todos.length; i++){
       if (this.todos[i].id == todo.id) {
         this.todos[i] = todo;
       }
@@ -36,7 +36,7 @@ export class TodoDao {
   }
 
   deleteTodo(id) {
-    for (var i=0; i< this.todos.length; i++){
+    for (let i=0; i< this.todos.length; i++){
       if (this.todos[i].id == id) {
         this.todos.splice(i,1);
       }
@@ -44,13 +44,13 @@ export class TodoDao {
   }
 
   getTestTodos(){
-    const todo = new Todo(1, "12", false,"Example Assignment", "12/31/2019", "Chew all the gum that you can find until you explode");
-    const todo2 = new Todo(2, "12", false,"Other Assignment", "11/30/2020", "More endpoints");
-    const todo3 = new Todo(3, "12",false,"Otherer Assignment", "11/30/2020", "Finish endpoints");
-    const todo4 = new Todo(4, "12",false,"Type Assignment", "12/31/2019", "Type and type");
-    const todo5 = new Todo(5, "12",false,"That Assignment", "11/30/2020", "More endpoints");
-    const todo6 = new Todo(6, "12",false,"Assignment", "11/30/2020", "Finish endpoints");
-    const todo7 = new Todo(7,"13", false, "Sue's only assignment", "11/30/2020", "One lonely assignment");
+    const todo = new Todo(1, "12", TodoStatus.INCOMPLETE,"Example Assignment", "12/31/2019", "Chew all the gum that you can find until you explode");
+    const todo2 = new Todo(2, "12",TodoStatus.INCOMPLETE,"Other Assignment", "11/30/2020", "More endpoints");
+    const todo3 = new Todo(3, "12",TodoStatus.INCOMPLETE, "Other-er Assignment", "11/30/2020", "Finish endpoints");
+    const todo4 = new Todo(4, "12",TodoStatus.INCOMPLETE, "Type Assignment", "12/31/2019", "Type and type");
+    const todo5 = new Todo(5, "12",TodoStatus.INCOMPLETE, "That Assignment", "11/30/2020", "More endpoints");
+    const todo6 = new Todo(6, "12",TodoStatus.INCOMPLETE, "Assignment", "11/30/2020", "Finish endpoints");
+    const todo7 = new Todo(7,"13", TodoStatus.INCOMPLETE, "Sue's only assignment", "11/30/2020", "One lonely assignment");
 
 
     this.todos.push(todo);
