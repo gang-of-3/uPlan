@@ -45,7 +45,7 @@ app.post('/ws/logon', function (req, res) {
 app.get('/ws/todos', function (req, res) {
   //get all tdo items for person
 
-  const todoItems = todoService.getTodos();
+  const todoItems = todoService.getTodos(req.body.uid);
 
     ////Old hardcoded version////
 

@@ -9,8 +9,8 @@ export class TodoService {
     this.todoDao = new TodoDao();
   }
 
-  getTodos(){
-    return this.todoDao.getTodos();
+  getTodos(uid){
+    return this.todoDao.getTodos(uid);
   }
 
 
@@ -35,7 +35,7 @@ export class TodoService {
 
 
   objToTodo(obj){
-    this.todo = new Todo(obj.id, obj.status, obj.title, obj.dueDate, obj.description);
+    this.todo = new Todo(obj.id,obj.uid, obj.status, obj.title, obj.dueDate, obj.description);
 
     return this.todo;
   }

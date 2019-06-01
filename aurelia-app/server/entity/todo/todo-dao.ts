@@ -4,14 +4,23 @@ export class TodoDao {
 
   todos: Array<Todo>;
 
+
   constructor() {
     this.todos = new Array<Todo>();
 
     this.getTestTodos();
   }
 
-  getTodos() {
-    return this.todos;
+  getTodos(uid) {
+    let userTodos = [];
+    for(let i=0; i < this.todos.length; i++){
+      if (this.todos[i].uid == uid){
+        userTodos.push(this.todos[i])
+      }
+    }
+
+    return userTodos;
+
   }
 
   editTodos(todo){
@@ -35,12 +44,13 @@ export class TodoDao {
   }
 
   getTestTodos(){
-    const todo = new Todo(1, false,"Example Assignment", "12/31/2019", "Chew all the gum that you can find until you explode");
-    const todo2 = new Todo(2, false,"Other Assignment", "11/30/2020", "More endpoints");
-    const todo3 = new Todo(3, false,"Otherer Assignment", "11/30/2020", "Finish endpoints");
-    const todo4 = new Todo(4, false,"Type Assignment", "12/31/2019", "Type and type");
-    const todo5 = new Todo(5, false,"That Assignment", "11/30/2020", "More endpoints");
-    const todo6 = new Todo(6, false,"Assignment", "11/30/2020", "Finish endpoints");
+    const todo = new Todo(1, "12", false,"Example Assignment", "12/31/2019", "Chew all the gum that you can find until you explode");
+    const todo2 = new Todo(2, "12", false,"Other Assignment", "11/30/2020", "More endpoints");
+    const todo3 = new Todo(3, "12",false,"Otherer Assignment", "11/30/2020", "Finish endpoints");
+    const todo4 = new Todo(4, "12",false,"Type Assignment", "12/31/2019", "Type and type");
+    const todo5 = new Todo(5, "12",false,"That Assignment", "11/30/2020", "More endpoints");
+    const todo6 = new Todo(6, "12",false,"Assignment", "11/30/2020", "Finish endpoints");
+    const todo7 = new Todo(7,"13", false, "Sue's only assignment", "11/30/2020", "One lonely assignment");
 
 
     this.todos.push(todo);
@@ -49,6 +59,7 @@ export class TodoDao {
     this.todos.push(todo4);
     this.todos.push(todo5);
     this.todos.push(todo6);
+    this.todos.push(todo7);
 
   }
 }
