@@ -24,9 +24,7 @@ export class ItineraryService {
   findItinerary( year, month, day){
     return this.events ? this.events.filter((item:CalendarItem) => {
       var dateTime:Date = item.dateTime;
-      if(item.title == 'print') {
-        console.log(dateTime);
-      }
+
       return dateTime.getFullYear() === year && dateTime.getMonth() === month && dateTime.getDate() === day;
     }): [];
   }

@@ -10,6 +10,7 @@
     "body-parser": "^1.19.0",
     "bootstrap": "^4.3.1",
     "cookie-parser": "^1.4.4",
+    "datejs": "^1.0.0-rc3",
     "font-awesome": "^4.6.3",
     "jquery": "^3.3.1",
     "popper.js": "^1.15.0",
@@ -74,7 +75,7 @@
   },
   "scripts": {
     "build": "au build",
-    "start": "au run",
+    "start": "au run --auto-install",
     "test": "au test",
     "start-server": "node server.ts",
     "debug-server": "node  %NODE_DEBUG_OPTION% --require ts-node/register server.ts"

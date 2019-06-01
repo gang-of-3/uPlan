@@ -5,7 +5,6 @@ export class TodoInformationService{
   todoItems: TodoInformation[];
 
   setTodoItems(todoItems: TodoInformation[]) {
-    //console.log(todoItems);
     this.todoItems = todoItems;
   }
 
