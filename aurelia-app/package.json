@@ -4,17 +4,17 @@
   "version": "0.1.0",
   "license": "MIT",
   "dependencies": {
-    "aurelia-bootstrapper": "^2.3.2",
     "aurelia-animator-css": "^1.0.4",
-    "cookie-parser": "^1.4.4",
-    "whatwg-fetch": "^3.0.0",
+    "aurelia-bootstrapper": "^2.3.2",
     "aurelia-fetch-client": "^1.0.0",
     "body-parser": "^1.19.0",
     "bootstrap": "^4.3.1",
-    "popper.js": "^1.15.0",
+    "cookie-parser": "^1.4.4",
     "font-awesome": "^4.6.3",
     "jquery": "^3.3.1",
-    "ts-node": "^7.0.1"
+    "popper.js": "^1.15.0",
+    "ts-node": "^7.0.1",
+    "whatwg-fetch": "^3.0.0"
   },
   "devDependencies": {
     "aurelia-cli": "^1.0.0-beta.15",
@@ -76,7 +76,8 @@
     "build": "au build",
     "start": "au run",
     "test": "au test",
-    "start-server": "node server.ts"
+    "start-server": "node server.ts",
+    "debug-server": "node  %NODE_DEBUG_OPTION% --require ts-node/register server.ts"
   },
   "engines": {
     "node": ">=8.9.0"
