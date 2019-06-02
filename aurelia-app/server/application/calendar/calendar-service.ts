@@ -47,7 +47,7 @@ export class CalendarService {
 
 
   objToCalendarItem(obj){
-    this.calendarItem = new CalendarItem(obj.id, obj.uid, obj.title, obj.dateTime, obj.type, obj.classid, obj.description);
+    this.calendarItem = new CalendarItem(obj.id, obj.uid, obj.title, obj.dateTime, obj.type, obj.classId, obj.description);
 
     return this.calendarItem;
   }
