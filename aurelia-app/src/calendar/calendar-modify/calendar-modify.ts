@@ -29,6 +29,10 @@ export class CalendarModify {
     });
   }
 
+  canModify(){
+    return this.calendarItem.classId === undefined || this.isInstructor;
+  }
+
   isNew() {
     return this.calendarItem.id == "0";
   }
