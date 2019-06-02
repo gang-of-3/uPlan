@@ -30,7 +30,7 @@ export class CalendarModify {
   }
 
   get canModify(){
-    return this.calendarItem.classId === undefined || this.isInstructor;
+    return this.calendarItem.classId === "" || this.isInstructor;
   }
 
   isNew() {
@@ -49,6 +49,7 @@ export class CalendarModify {
     var calendarItem = new CalendarItem(this.calendarItem.id, this.calendarItem.title, date, this.calendarItem.classId,this.calendarItem.description);
     if (this.isNew()) {
       this.externalCallUtility.post(ExternalUrl.CALENDAR, calendarItem).then((response) => {
+        calendarItem.id = response.content;
         this.itineraryService.addItineraryItem(calendarItem);
       });
     }else{
