@@ -34,7 +34,6 @@ export class CalendarDao {
         userCalendarItems.push(this.calendarItems[i])
       }
     }
-
     return userCalendarItems;
   }
 
@@ -68,7 +67,7 @@ export class CalendarDao {
     const c_item3 = new CalendarItem(3, "12", "Other-er Assignment", "July 4, 2019 5:30:00", EventType.GROUP_MEETING, undefined,"Finish endpoints");
     const c_item4 = new CalendarItem(4, "12", "Type Assignment", "June 23, 2019 14:24:00", EventType.TEST, undefined,"Type and type");
     const c_item5 = new CalendarItem(5, "12", "That Assignment", "May 26, 2019 20:56:00", EventType.GROUP_MEETING, undefined,"More endpoints");
-    const c_item7 = new CalendarItem(7, "13", "Sue's only assignment", "June 7, 2019 16:45:00", EventType.OFFICE_HOURS,1, "One lonely assignment");
+    const c_item7 = new CalendarItem(7, "13", "Sue's only assignment", "June 7, 2019 16:45:00", EventType.OFFICE_HOURS,11, "One lonely assignment");
 
 
     this.calendarItems.push(c_item1);

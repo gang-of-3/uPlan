@@ -23,9 +23,8 @@ export class CalendarService {
 
     let class_items = this.classService.getClassItems(uid);
     for (let i = 0; i < class_items.length; i++){
-      c_items.push(class_items[i][0]);
+      c_items.push(class_items[i]);
     }
-
     return c_items;
   }
 

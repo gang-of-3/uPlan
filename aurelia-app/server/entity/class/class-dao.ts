@@ -15,9 +15,15 @@ export class ClassDao {
 
   getItemsForClass(uid) {
     let classItems = [];
+    let temp_class_items = [];
     for(let i=0; i < this.classes.length; i++){
       if (this.classes[i].students.includes(uid)){
-        classItems.push(this.calendarDao.getItemsFromClassId(this.classes[i].id, uid))
+        temp_class_items.push(this.calendarDao.getItemsFromClassId(this.classes[i].id, uid));
+      }
+    }
+    if(temp_class_items[0] != undefined) {
+      for (let i = 0; i < temp_class_items[0].length; i++){
+        classItems.push(temp_class_items[0][i]);
       }
     }
     return classItems;
@@ -25,7 +31,7 @@ export class ClassDao {
 
 
   createClasses(){
-    const class1 = new Class(1, "SE 577", "Software Architecture");
+    const class1 = new Class(11, "SE 577", "Software Architecture");
     const class2 = new Class(2, "OC", "Other Class");
 
     class1.addStudent('12');
