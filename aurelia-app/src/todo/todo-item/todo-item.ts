@@ -7,6 +7,7 @@ import {TodoInformationService} from "../todo-information-service";
 @autoinject
 export class TodoItem{
   @bindable  information:TodoInformation;
+  isComplete:boolean;
 
 
   constructor(private externalCallUtility: ExternalCallUtility, private todoInformationService: TodoInformationService){
@@ -19,6 +20,7 @@ export class TodoItem{
   }
 
   markComplete(){
+    this.isComplete = true;
     this.information.status = TodoStatus.COMPLETE;
     this.externalCallUtility.put(ExternalUrl.TODO,this.information,this.information.id.toString())
   }

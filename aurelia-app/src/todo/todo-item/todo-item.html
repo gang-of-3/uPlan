@@ -3,7 +3,7 @@
   <require from="../todo-edit/todo-edit"></require>
 
   <div class="todo-item card m-2">
-    <div class="card-header font-weight-bolder text-capitalize">
+    <div class="card-header font-weight-bolder text-capitalize" class.bind="isComplete ? 'bg-secondary' : ''">
       ${information.title}
       <div class="btn-group pull-right clickable">
         <i class="fa fa-caret-down" data-toggle="dropdown" aria-hidden="true"></i>
