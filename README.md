@@ -58,7 +58,7 @@ __Figure 1. Architectural Overview__
 
 <img src="https://raw.githubusercontent.com/gang-of-3/uPlan/master/ModelClassDiagram.png" alt="drawing" width="600"/>
 
-__Figure 2. Preliminary Calendar Model Class Diagram___
+__Figure 2. Preliminary Calendar Model Class Diagram__
 
 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Although the team plans to take an agile approach to development of the uPlan system, preliminary UML diagrams have been created to bring clarity to the overall architecture.  The system comprises of two main elements; Calendar/Scheduling and TODO.  The overall structure of both systems is nearly identical so while only the Scheduling System is detailed, a similar structure exists for the TODO system.  The Scheduling Service will be used to create, update, and retrieve events for a User’s calendar.  Figure 2 above shows the request and response objects that will be used by the REST service to interact with consumers.  When a User desires to update or add a new event the Event object shall be used to convey all desired properties of the event.  Similarly, when requesting Events to display on a User’s calendar the Event object will be used as well.  When viewing their Calendar, the User may only desire Events of a certain type or within a certain time period.  The EventInfo object will allow specification to be made as to what types of events are requested of the service.  While the class diagram depicted in Figure 2 highlight many fields and values of the request and response objects, additional fields may be added or removed during development.  With this basic understanding of the models used to communicate between the client and consumer, greater insight can be achieved when analyzing the process flow.  
 
