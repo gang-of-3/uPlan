@@ -30,7 +30,7 @@ export class CalendarModify {
   }
 
   get canModify(){
-    return this.calendarItem.classId === "" || this.isInstructor;
+    return (this.calendarItem.classId === "" || this.calendarItem.classId === undefined) || this.isInstructor;
   }
 
   isNew() {

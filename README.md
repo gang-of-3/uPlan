@@ -7,6 +7,9 @@ __Instructions on Running__
 3. Run 'npm run start-server'
 4. Run 'npm run start'
 
+__Demo Video__  
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;[![Video Demo](http://img.youtube.com/vi/fESEFh3Z2cU/0.jpg)](http://www.youtube.com/watch?v=fESEFh3Z2cU "Video Title")
+
 __Mission Statement__  
 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;The Gang of Three, or Go3, strives to provide digital tools to help students succeed in the modern classroom environment. Gang of Three believes that through proper implementation of technology student success can be thoroughly supported and assured. Too often technology, which is supposed to assist and simplify workstreams, ends up adding complications and obstacles, complicating that which should be simple. We, at Gang of Three, believe tools should be easy to use, and help streamline learning, not hinder learning.  Above all else, Gang of Three seeks to promote learning in an intuitive and stimulating environment, encourage the engagement of a student within their academic community, and aid collaboration between peers to promote learning in an organic fashion while fostering relationships.  Through learning, academic engagement, and collaboration, true academic success can be achieved.
 
