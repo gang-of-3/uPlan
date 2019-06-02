@@ -23,9 +23,8 @@ export class CalendarService {
 
     let class_items = this.classService.getClassItems(uid);
     for (let i = 0; i < class_items.length; i++){
-      c_items.push(class_items[i][0]);
+      c_items.push(class_items[i]);
     }
-
     return c_items;
   }
 
@@ -37,9 +36,8 @@ export class CalendarService {
   }
 
   addCalendarItem(obj){
-    let todo = this.objToCalendarItem(obj);
-
-    return this.calendarDao.addCalendarItem(todo);
+    let c_item = this.objToCalendarItem(obj);
+    return this.calendarDao.addCalendarItem(c_item);
   }
 
   deleteCalendarItem(id){
@@ -48,7 +46,7 @@ export class CalendarService {
 
 
   objToCalendarItem(obj){
-    this.calendarItem = new CalendarItem(obj.id, obj.uid, obj.title, obj.dateTime, obj.type, obj.classid, obj.description);
+    this.calendarItem = new CalendarItem(obj.id, obj.uid, obj.title, obj.dateTime, obj.type, obj.classId, obj.description);
 
     return this.calendarItem;
   }
