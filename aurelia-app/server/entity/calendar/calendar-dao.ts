@@ -35,7 +35,10 @@ export class CalendarDao {
   }
 
   addCalendarItem(c_item_in){
+    // mock giving this the next Id in the DB
+    c_item_in.id = this.calendarItems.length;
     this.calendarItems.push(c_item_in);
+    return c_item_in.id
   }
 
   deleteCalendarItem(id) {

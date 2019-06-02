@@ -23,18 +23,15 @@ export class CalendarService {
 
 
   editCalendarItem(obj){
-
     let c_item = this.objToCalendarItem(obj);
 
     this.calendarDao.editCalendarItem(c_item);
-
-
   }
 
   addCalendarItem(obj){
     let todo = this.objToCalendarItem(obj);
 
-    this.calendarDao.addCalendarItem(todo);
+    return this.calendarDao.addCalendarItem(todo);
   }
 
   deleteCalendarItem(id){
