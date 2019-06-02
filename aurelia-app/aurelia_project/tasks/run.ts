@@ -57,10 +57,10 @@ const run = gulp.series(
   done => {
     browserSync({
       open: false,
-      port: 8080,
+      port: 8081,
       logLevel: 'silent',
       proxy: {
-        target: "localhost:8080",
+        target: "localhost:8081",
         middleware: proxy(proxyOptions)
       }
     }, function(err, bs) {
