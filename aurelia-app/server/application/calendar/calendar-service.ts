@@ -11,7 +11,7 @@ export class CalendarService {
   classService: ClassService;
   constructor() {
     this.calendarDao = new CalendarDao();
-    this.classService = new ClassService();
+    this.classService = new ClassService(this.calendarDao);
   }
 
   getCalendarItems(uid, type){

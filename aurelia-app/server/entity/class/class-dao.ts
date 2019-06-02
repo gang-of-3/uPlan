@@ -6,8 +6,8 @@ export class ClassDao {
   calendarDao: CalendarDao;
   classes: Array<Class>;
 
-  constructor() {
-    this.calendarDao = new CalendarDao();
+  constructor(calendarDao:CalendarDao) {
+    this.calendarDao = calendarDao;
     this.classes = new Array<Class>();
 
     this.createClasses();
