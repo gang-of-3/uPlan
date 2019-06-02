@@ -3,11 +3,13 @@ export class CalendarItem{
   title:string;
   dateTime:Date;
   classId: string;
+  description:String;
 
-  constructor(id, title, dateTime){
+  constructor(id, title, dateTime, descirption){
     this.id = id;
     this.title = title;
     this.dateTime = dateTime;
+    this.description = descirption;
   }
 
   public getId(){

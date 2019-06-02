@@ -42,7 +42,7 @@ export class CalendarModify {
   submit() {
     //28 May 2019 06:00:00 EST
     var date = new Date(Date.parse(this.calendarItem.dateTime.toString()));
-    var calendarItem = new CalendarItem(this.calendarItem.id, this.calendarItem.title, date);
+    var calendarItem = new CalendarItem(this.calendarItem.id, this.calendarItem.title, date, this.calendarItem.description);
     if (this.isNew()) {
       this.externalCallUtility.post(ExternalUrl.CALENDAR, calendarItem).then((response) => {
         this.itineraryService.addItineraryItem(calendarItem);
