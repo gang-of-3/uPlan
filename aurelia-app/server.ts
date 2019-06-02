@@ -87,7 +87,7 @@ app.get('/ws/users', function (req, res) {
 
 app.get('/ws/calendar/:year/:month', function (req, res) {
   // get all calendar items for person
-  const calendarItems = calendarService.getCalendarItems(req.body.uid);
+  const calendarItems = calendarService.getCalendarItems(req.body.uid, req.body.type);
   // var calendarItems = [{
   //   id: 1,
   //   title: "Example Assignment",
@@ -99,9 +99,9 @@ app.get('/ws/calendar/:year/:month', function (req, res) {
 
 app.post('/ws/calendar', function (req, res) {
   //save a new calendar item
-  calendarService.addCalendarItem(req.body)
+   let id = calendarService.addCalendarItem(req.body)
   //return the id of the new item
-  res.end();
+  res.send({id});
 });
 
 app.put('/ws/calendar/:itemId', function (req, res) {
