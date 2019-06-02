@@ -1,3 +1,41 @@
 <template>
-  HELLO CALENDAR
+  <require from="./calendar.scss"></require>
+  <require from="./itinerary/itinerary"></require>
+  <require from="./calendar-modify/calendar-modify"></require>
+  <p textcontent.bind="getTest()"></p>
+  <div class="row">
+    <div class="col"></div>
+    <div class="col h2 text-center">
+      ${monthName} ${activeYear}
+    </div>
+    <div class="col">
+      <div class="clickable text-right" data-toggle="modal" data-target="#calendarModify-0"  click.delegate="addItem()" >
+        <i class="fa fa-plus" aria-hidden="true" ></i> Add Item
+      </div>
+    </div>
+  </div>
+  <div class="row h2">
+    <div class="col">
+      <i class="fa fa-long-arrow-left clickable" aria-hidden="true" click.delegate="previousMonth()"></i>
+    </div>
+    <div class="col text-right">
+      <i class="fa fa-long-arrow-right clickable" aria-hidden="true" click.delegate="nextMonth()"></i>
+    </div>
+  </div>
+  <div class="row">
+    <div class="col border text-center" repeat.for="day of dayNames">
+      ${day}
+    </div>
+  </div>
+  <div class="row" repeat.for="week of calendar">
+    <div class="col border day" repeat.for="day of week">
+      <div class="row pl-1 font-weight-bold">
+        ${day}
+      </div>
+      <div class="row pl-1 ">
+        <itinerary day.one-way="day" month.one-way="activeMonth" year.one-way="activeYear"></itinerary>
+      </div>
+    </div>
+  </div>
+  <calendar-modify calendar-item.one-way="newCalendarItem"></calendar-modify>
 </template>

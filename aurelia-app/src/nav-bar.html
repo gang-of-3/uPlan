@@ -13,17 +13,17 @@
             <a class="nav-link font-weight-bold" href="#" click.delegate="logout()">Home <span class="sr-only">(current)</span></a>
           </li>
           <li class="nav-item mx-3">
-            <a class="nav-link font-weight-bold" href="#">Calendar</a>
+            <a class="nav-link font-weight-bold" href="calendar">Calendar</a>
           </li>
           <li class="nav-item">
-            <a class="nav-link font-weight-bold" href="todo">TODO List</a>
+            <a class="nav-link font-weight-bold" href="todo" if.bind="userInformation.type != 'INSTRUCTOR'">TODO List</a>
           </li>
         </ul>
       </div>
     </div>
 
-    <div class="clickable my-2 my-lg-0" if.bind="isSecured">
-      <div class="nav-link text-white font-weight-bold" click.delegate="logout()">Logout</div>
+    <div class="my-2 my-lg-0" if.bind="isSecured">
+      <div class="clickable nav-link text-white font-weight-bold" click.delegate="logout()">Logout</div>
     </div>
   </nav>
 </template>

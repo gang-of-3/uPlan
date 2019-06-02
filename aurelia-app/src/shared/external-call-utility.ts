@@ -8,8 +8,12 @@ export class ExternalCallUtility{
     this.client = new HttpClient();
   }
 
-  get(path: ExternalUrl){
-    return this.client.get(path);
+  get(path: ExternalUrl, suffix?: String){
+    var fullPath = path.toString();
+    if(suffix){
+      fullPath += '/' + suffix;
+    }
+    return this.client.get(fullPath);
   }
 
   post(path: ExternalUrl, content){

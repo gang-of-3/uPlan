@@ -1,9 +1,10 @@
 import {UserService} from "./server/application/user/user-service";
 import {SessionManager} from "./server/application/session/session-manager";
 import {TodoService} from "./server/application/todo/todo-service";
+import {CalendarService} from "./server/application/calendar/calendar-service";
+
 
 var bodyParser = require("body-parser");
-
 var express = require('express');
 var app = express();
 var port = 3100;
@@ -13,6 +14,8 @@ var cookieParser = require('cookie-parser');
 const userService = new UserService();
 const sessionManager = new SessionManager();
 const todoService = new TodoService();
+const calendarService = new CalendarService();
+
 
 app.use(bodyParser.json());
 app.use(cookieParser());
@@ -95,6 +98,41 @@ app.delete('/ws/todos/:todoId', function (req, res) {
 app.get('/ws/users', function (req, res) {
   const details = userService.lookupUserDetails(req.body.uid);
   res.send(details);
+});
+
+app.get('/ws/calendar/:year/:month', function (req, res) {
+  // get all calendar items for person
+  const calendarItems = calendarService.getCalendarItems(req.body.uid, req.body.type);
+  // var calendarItems = [{
+  //   id: 1,
+  //   title: "Example Assignment",
+  //   dateTime: new Date(),
+  //   description: "Software Group Meeting"
+  // }];
+  res.send({calendarItems:calendarItems});
+});
+
+app.post('/ws/calendar', function (req, res) {
+  //save a new calendar item
+   let id = calendarService.addCalendarItem(req.body)
+  //return the id of the new item
+  res.send({id});
+});
+
+app.put('/ws/calendar/:itemId', function (req, res) {
+  //update an existing calendar item
+  calendarService.editCalendarItem(req.body)
+  res.end();
+});
+
+app.delete('/ws/calendar/:itemId', function (req, res) {
+  //remove a calendar item
+  calendarService.deleteCalendarItem(req.body)
+  res.end();
+});
+
+app.get('/ws/classes', function (req, res) {
+  res.send({classes:[{id:11,shortName:"SE577",longName:"Software Architecture"}]});
 });
 
 
