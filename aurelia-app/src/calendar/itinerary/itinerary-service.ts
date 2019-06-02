@@ -17,6 +17,15 @@ export class ItineraryService {
     this.events.push(item);
   }
 
+  updateItineraryItem(item: CalendarItem) {
+    var i =0;
+    for(i;i<this.events.length;i++){
+      if(item.id === this.events[i].id){
+        this.events[i] = item;
+      }
+    }
+  }
+
   setFullItinerary(events) {
     this.events = events;
   }

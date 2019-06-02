@@ -48,7 +48,9 @@ export class CalendarModify {
         this.itineraryService.addItineraryItem(calendarItem);
       });
     }else{
-      this.externalCallUtility.put(ExternalUrl.CALENDAR, calendarItem, calendarItem.id);
+      this.externalCallUtility.put(ExternalUrl.CALENDAR, calendarItem, calendarItem.id).then((response) => {
+        this.itineraryService.updateItineraryItem(calendarItem);
+      });
     }
   }
 }

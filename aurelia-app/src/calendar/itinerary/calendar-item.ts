@@ -15,7 +15,7 @@ export class CalendarItem{
   }
 
   toString(){
-    return this.dateTime.toLocaleTimeString('en-US', {hour: "numeric", minute: "numeric"}) + " - " + this.title;
+    return new Date(this.dateTime).toLocaleTimeString('en-US', {hour: "numeric", minute: "numeric"}) + " - " + this.title;
   }
 }
 
