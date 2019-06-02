@@ -1,5 +1,6 @@
 import {UserService} from "./server/application/user/user-service";
 import {SessionManager} from "./server/application/session/session-manager";
+import {CalendarService} from "./server/application/calendar/calendar-service";
 
 var bodyParser = require("body-parser");
 
@@ -11,6 +12,7 @@ var cookieParser = require('cookie-parser');
 
 const userService = new UserService();
 const sessionManager = new SessionManager();
+const calendarService = new CalendarService();
 
 app.use(bodyParser.json());
 app.use(cookieParser());
@@ -84,29 +86,33 @@ app.get('/ws/users', function (req, res) {
 });
 
 app.get('/ws/calendar/:year/:month', function (req, res) {
-  //get all calendar items for person
-  var calendarItems = [{
-    id: 1,
-    title: "Example Assignment",
-    dateTime: new Date(),
-    description: "Software Group Meeting"
-  }];
+  // get all calendar items for person
+  const calendarItems = calendarService.getCalendarItems(req.body.uid);
+  // var calendarItems = [{
+  //   id: 1,
+  //   title: "Example Assignment",
+  //   dateTime: new Date(),
+  //   description: "Software Group Meeting"
+  // }];
   res.send({calendarItems:calendarItems});
 });
 
 app.post('/ws/calendar', function (req, res) {
   //save a new calendar item
+  calendarService.addCalendarItem(req.body)
   //return the id of the new item
   res.end();
 });
 
 app.put('/ws/calendar/:itemId', function (req, res) {
   //update an existing calendar item
+  calendarService.editCalendarItem(req.body)
   res.end();
 });
 
 app.delete('/ws/calendar/:itemId', function (req, res) {
   //remove a calendar item
+  calendarService.deleteCalendarItem(req.body)
   res.end();
 });
 
