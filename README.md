@@ -40,25 +40,30 @@ __Features__
 
 | User | Feature Name | Description | 
 | :---: | :-: | :-: |
-|Student/Instructor|View Calendar|As a student/instructor, I would like to view all of my upcoming scheduled events.|
+| Student | View Schedule | As a student, I would like to view all of my upcoming scheduled events. |
+| Student | View TODO List | As a student, I would like to view my current TODO items |
+| Student/Instructor | Add Schedule Item | As a student/instructor, I would like to be able to add items to my schedule. |
+| Student | Add TODO Item | As a student, I would like to be able to add a TODO items that I would like to track. |
+| Instructor | Create Class | As an instructor, I would like to be able to create a class for students to join. |
+| Student | Join a Class | As a student, I would like to be able to join an existing class to receive updates. |
 
 __Architectural Diagram__  
 
-<img src="https://raw.githubusercontent.com/gang-of-3/uPlan/master/Architectural%20Diagram.png" alt="drawing" width="600"/>
+<img src="https://raw.githubusercontent.com/gang-of-3/uPlan/master/ArchitecturalDiagram.png" alt="drawing" width="600"/>
 
 __Figure 1. Architectural Overview__
 
 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;The system shall be divided into three primary layers. The Presentation Layer will encompass a web application responsible for displaying data to the end-user and prompting the end-user for data input. The web application will communicate with REST services for all necessary data retrieval and updates.  Server-side service and business logic shall be contained by the application layer and expressed through a variety of specialized services.  All interaction with the database shall be conducted by the entity layer which will be out of scope for this project and instead mock-data will be utilized.  Although the entity layer will not be developed, interfaces to the entity layer will be established such that, in the future, a full implementation of the entity layer could be easily conducted.  In Figure 1, the layers are displayed as well as generalized services that will be provided.  Figure 1 highlights the delineation of responsibilities between UI components, application components, and entity components.  
 
 
-<img src="https://raw.githubusercontent.com/gang-of-3/uPlan/master/Model%20Class%20Diagram.png" alt="drawing" width="600"/>
+<img src="https://raw.githubusercontent.com/gang-of-3/uPlan/master/ModelClassDiagram.png" alt="drawing" width="600"/>
 
 __Figure 2. Preliminary Schedule Model Class Diagram___
 
 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Although the team plans to take an agile approach to development of the uPlan system, preliminary UML diagrams have been created to bring clarity to the overall architecture.  The Scheduling Service will be used to create, update, and retrieve events for a User’s calendar.  Figure 2 above shows the request and response objects that will be used by the REST service to interact with consumers.  When a User desires to update or add a new event the Event object shall be used to convey all desired properties of the event.  Similarly, when requesting Events to display on a User’s calendar the Event object will be used as well.  When viewing their Calendar, the User may only desire Events of a certain type or within a certain time period.  The EventInfo object will allow specification to be made as to what types of events are requested of the service.  While the class diagram depicted in Figure 2 highlight many fields and values of the request and response objects, additional fields may be added or removed during development.  With this basic understanding of the models used to communicate between the client and consumer, greater insight can be achieved when analyzing the process flow.  
 
 
-<img src="https://raw.githubusercontent.com/gang-of-3/uPlan/master/Sequence%20Diagram.png" alt="drawing" width="800"/>
+<img src="https://raw.githubusercontent.com/gang-of-3/uPlan/master/SequenceDiagram.png" alt="drawing" width="800"/>
 
 __Figure 3. Schedule Service Sequence Diagram__
 
@@ -66,7 +71,7 @@ __Figure 3. Schedule Service Sequence Diagram__
 After relevant data is retrieved the service will be responsible for performing any filtering and decoration necessary for proper presentation back to the UI.  For example, the service API may allow for the specification of a date range of desired events, or for a specification of event types that are desired.  The service layer shall then be responsible for either requesting the correct data of the DAO, or in some scenarios performing the necessary filters.  Decoration tasks may also be required to decode fields that are not human readable, such as type identifiers.  After all transformations of the data have occurred the service shall respond to the requestor with a well-formed JSON response.  
 
 
-<img src="https://raw.githubusercontent.com/gang-of-3/uPlan/master/Schedule%20Service%20Class%20Diagram.png" alt="drawing" width="800"/>
+<img src="https://raw.githubusercontent.com/gang-of-3/uPlan/master/CalendarServiceClassDiagram.png" alt="drawing" width="800"/>
 
 __Figure 4. Preliminary Schedule Service Class Diagram__
 
