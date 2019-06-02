@@ -15,7 +15,7 @@
               Title
             </div>
             <div class="col">
-              <input type="text" disabled.bind="!canModify()" value.bind="calendarItem.title"/>
+              <input type="text" disabled.bind="!canModify" value.bind="calendarItem.title"/>
             </div>
           </div>
           <div class="row py-3">
@@ -23,7 +23,7 @@
               When
             </div>
             <div class="col">
-              <input type="text" disabled.bind="!canModify()" value.bind="calendarItem.dateTime"/>
+              <input type="text" disabled.bind="!canModify" value.bind="calendarItem.dateTime"/>
             </div>
           </div>
           <div class="row pb-3" if.bind="isInstructor">
@@ -31,9 +31,9 @@
               Class
             </div>
             <div class="col">
-              <select>
+              <select value.bind="calendarItem.classId">
                 <option value=""></option>
-                <option value="${calendarItem.classId}"
+                <option value="${class.id}"
                         repeat.for="class of classes">${class.shortName}</option>
               </select>
             </div>
@@ -43,14 +43,14 @@
           </div>
           <div class="row">
             <div class="col">
-              <textarea rows="3" value.bind="calendarItem.description" disabled.bind="!canModify()"></textarea>
+              <textarea rows="3" value.bind="calendarItem.description" disabled.bind="!canModify"></textarea>
             </div>
           </div>
         </div>
         <div class="modal-footer">
-          <button type="button" class="btn btn-danger" data-dismiss="modal" click.delegate="delete()" if.bind="!isNew() && canModify()">Delete</button>
+          <button type="button" class="btn btn-danger" data-dismiss="modal" click.delegate="delete()" if.bind="!isNew() && canModify">Delete</button>
           <button type="button" class="btn btn-secondary" data-dismiss="modal">Cancel</button>
-          <button type="button" class="btn btn-primary"  click.delegate="submit()" data-dismiss="modal" if.bind="canModify()">Save changes</button>
+          <button type="button" class="btn btn-primary"  click.delegate="submit()" data-dismiss="modal" if.bind="canModify">Save changes</button>
         </div>
       </div>
     </div>

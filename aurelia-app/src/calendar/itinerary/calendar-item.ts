@@ -5,11 +5,12 @@ export class CalendarItem{
   classId: string;
   description:String;
 
-  constructor(id, title, dateTime, descirption){
+  constructor(id, title, dateTime, classId, descirption){
     this.id = id;
     this.title = title;
     this.dateTime = dateTime;
     this.description = descirption;
+    this.classId = classId;
   }
 
   public getId(){
