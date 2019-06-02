@@ -1,5 +1,12 @@
 # uPlan
 
+__Instructions on Running__
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;The simplest way to run the application is to utilize two npm scripts.  The first script 'start-server' will start up the midtier on port 3100, and the second 'start' will start the web application on port 8080.  If either of these ports are unavailable the application will not successfully start.
+1. Checkout the project
+2. Navigate to the aurelia-app folder in a terminal
+3. Run 'npm run start-server'
+4. Run 'npm run start'
+
 __Mission Statement__  
 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;The Gang of Three, or Go3, strives to provide digital tools to help students succeed in the modern classroom environment. Gang of Three believes that through proper implementation of technology student success can be thoroughly supported and assured. Too often technology, which is supposed to assist and simplify workstreams, ends up adding complications and obstacles, complicating that which should be simple. We, at Gang of Three, believe tools should be easy to use, and help streamline learning, not hinder learning.  Above all else, Gang of Three seeks to promote learning in an intuitive and stimulating environment, encourage the engagement of a student within their academic community, and aid collaboration between peers to promote learning in an organic fashion while fostering relationships.  Through learning, academic engagement, and collaboration, true academic success can be achieved.
 
@@ -82,11 +89,4 @@ SOA Architecture
 Client-Server Pattern
 
 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;As a web based application, uPlan will primarily be accessed via a browser.  To provide a rich and interactive experience a client side application will be developed allowing for input and display of data received from a server side application.  Data will be provided to the web application via REST endpoints allowing for a clean separation of client and server responsibilities.  As the system requires numerous users to be able to simultaneously interact with the system, utilization of the client-server pattern will allow for optimal performance and scalability.  Placing the main processing on the server side will allow for less user side processing. This will make the application low cost on the user side, but the server may become a bottleneck. However, It is easier to increase the performance on the server side after release. This will allow more devices to utilize our application. Also, having such a separation will allow for easy scalability of the system as more users are introduced.
-
-__Instructions on Running__
-The simplest way to run the application is to utilize two npm scripts.  The first script 'start-server' will start up the midtier on port 3100, and the second 'start' will start the web application on port 8080.  If either of these ports are unavailable the application will not successfully start.
-1. Checkout the project
-2. Navigate to the aurelia-app folder in a terminal
-3. Run 'npm run start-server'
-4. Run 'npm run start'
 
