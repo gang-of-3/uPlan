@@ -4,6 +4,7 @@ __Instructions on Running__
 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;The simplest way to run the application is to utilize two npm scripts.  The first script 'start-server' will start up the midtier on port 3100, and the second 'start' will start the web application on port 8080.  If either of these ports are unavailable the application will not successfully start.
 1. Checkout the project
 2. Navigate to the aurelia-app folder in a terminal
+3. Run 'npm install'
 3. Run 'npm run start-server'
 4. Run 'npm run start'
 
