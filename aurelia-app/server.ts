@@ -1,9 +1,10 @@
 import {UserService} from "./server/application/user/user-service";
 import {SessionManager} from "./server/application/session/session-manager";
+import {TodoService} from "./server/application/todo/todo-service";
 import {CalendarService} from "./server/application/calendar/calendar-service";
 
-var bodyParser = require("body-parser");
 
+var bodyParser = require("body-parser");
 var express = require('express');
 var app = express();
 var port = 3100;
@@ -12,7 +13,9 @@ var cookieParser = require('cookie-parser');
 
 const userService = new UserService();
 const sessionManager = new SessionManager();
+const todoService = new TodoService();
 const calendarService = new CalendarService();
+
 
 app.use(bodyParser.json());
 app.use(cookieParser());
@@ -44,7 +47,12 @@ app.post('/ws/logon', function (req, res) {
 
 app.get('/ws/todos', function (req, res) {
   //get all tdo items for person
-  var todoItems = [{
+
+  const todoItems = todoService.getTodos(req.body.uid);
+
+    ////Old hardcoded version////
+
+  /*var todoItems = [{
     id: 1,
     title: "Example Assignment",
     dueDate: "12/31/2019",
@@ -61,22 +69,29 @@ app.get('/ws/todos', function (req, res) {
       dueDate: "11/30/2020",
       description: "More endpoints"
     }, {id: 6, title: "Assignment", dueDate: "11/30/2020", description: "Finish endpoints"}];
+
+  */
+
   res.send({todoItems:todoItems});
 });
 
 app.post('/ws/todos', function (req, res) {
   //save a new tdo item
   //return the id of the new item
+  todoService.addTodo(req.body);
   res.end();
 });
 
 app.put('/ws/todos/:todoId', function (req, res) {
   //update an existing tdo item
+  todoService.editTodo(req.body);
   res.end();
 });
 
 app.delete('/ws/todos/:todoId', function (req, res) {
   //remove a tdo item
+
+  todoService.deleteTodo(req.params.todoId);
   res.end();
 });
 
