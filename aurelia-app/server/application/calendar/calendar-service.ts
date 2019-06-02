@@ -37,9 +37,8 @@ export class CalendarService {
   }
 
   addCalendarItem(obj){
-    let todo = this.objToCalendarItem(obj);
-
-    return this.calendarDao.addCalendarItem(todo);
+    let c_item = this.objToCalendarItem(obj);
+    return this.calendarDao.addCalendarItem(c_item);
   }
 
   deleteCalendarItem(id){
