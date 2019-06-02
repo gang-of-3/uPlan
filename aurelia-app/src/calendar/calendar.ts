@@ -18,7 +18,7 @@ export class Calendar{
 
 
   constructor(private calendarUtility:CalendarUtility, private externalCallUtility:ExternalCallUtility, private itineraryService:ItineraryService){
-    this.newCalendarItem = new CalendarItem(0,"","","");
+    this.newCalendarItem = new CalendarItem(0,"","","","");
     this.dayNames = ['Sunday','Monday','Tuesday','Wednesday','Thursday','Friday','Saturday'];
     this.monthNames = ['January','February','March','April','May','June','July', 'August','September','October','November','December'];
     var currentMonth = calendarUtility.getCurrentMonth();
@@ -52,7 +52,7 @@ export class Calendar{
   setupCalendar(month, year){
     this.externalCallUtility.get(ExternalUrl.CALENDAR, year + '/' + month).then(data => {
       const events = data.content.calendarItems.map((item) => {
-        return new CalendarItem(item.id, item.title, new Date(item.dateTime), item.description);
+        return new CalendarItem(item.id, item.title, new Date(item.dateTime), item.classId,item.description);
       });
       this.itineraryService.setFullItinerary(events);
     });
@@ -63,7 +63,7 @@ export class Calendar{
   }
 
   addItem() {
-    this.newCalendarItem = new CalendarItem(0,"","", "");
+    this.newCalendarItem = new CalendarItem(0,"","", "","");
   }
 
 }
