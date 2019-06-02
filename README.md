@@ -7,7 +7,7 @@ __Instructions on Running__
 3. Run 'npm run start-server'
 4. Run 'npm run start'
 
-__Demo Video__
+__Demo Video__ 
 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;[![Video Demo](http://img.youtube.com/vi/fESEFh3Z2cU/0.jpg)](http://www.youtube.com/watch?v=fESEFh3Z2cU "Video Title")
 
 __Mission Statement__  
