@@ -23,7 +23,7 @@
   "platform": {
     "hmr": false,
     "open": false,
-    "port": 8081,
+    "port": 8080,
     "output": "dist"
   },
   "packageManager": "npm"
