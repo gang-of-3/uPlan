@@ -40,12 +40,15 @@ __Features__
 
 | User | Feature Name | Description | 
 | :---: | :-: | :-: |
-| Student | View Schedule | As a student, I would like to view all of my upcoming scheduled events. |
-| Student | View TODO List | As a student, I would like to view my current TODO items |
-| Student/Instructor | Add Schedule Item | As a student/instructor, I would like to be able to add items to my schedule. |
-| Student | Add TODO Item | As a student, I would like to be able to add a TODO items that I would like to track. |
-| Instructor | Create Class | As an instructor, I would like to be able to create a class for students to join. |
-| Student | Join a Class | As a student, I would like to be able to join an existing class to receive updates. |
+|Student|View TODO List|As a student, I would like to view my current TODO items|
+|Student|Add Calendar Item|As a student, I would like to be able to add items to my calendar.|
+|Instructor|Add Class Calendar Item|As an instructor, I would like to be able to add items to a classes’ calendar.|
+|Student/Instructor|Edit Calendar Item|As a student/instructor, I would like to be able to edit existing calendar items.|
+|Student/Instructor|Delete Calendar Item|As a student/instructor, I would like to be able to delete existing calendar items.|
+|Student|Add TODO Item|As a student, I would like to be able to add a TODO item that I would like to track.|
+|Student|Edit TODO Item|As a student, I would like to edit existing TODO items.|
+|Student|Delete TODO Item|As a student, I would like to delete an existing TODO item.|
+|Student|Mark TODO item complete|As a student, I would like to check off TODO items when they are completed|
 
 __Architectural Diagram__  
 
