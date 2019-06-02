@@ -21,7 +21,10 @@ export class CalendarService {
       return this.calendarFilter.filterCalendarItems(c_items, type);
     }
 
-    c_items.push(this.classService.getClassItems(uid));
+    let class_items = this.classService.getClassItems(uid);
+    for (let i = 0; i < class_items.length; i++){
+      c_items.push(class_items[i][0]);
+    }
 
     return c_items;
   }
