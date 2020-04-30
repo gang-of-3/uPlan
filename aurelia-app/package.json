@@ -13,7 +13,7 @@
     "bootstrap": "^4.3.1",
     "popper.js": "^1.15.0",
     "font-awesome": "^4.6.3",
-    "jquery": "^3.3.1",
+    "jquery": "^3.5.0",
     "ts-node": "^7.0.1",
     "datejs": "^1.0.0-rc3",
     "password-hash": "^1.2.2"
